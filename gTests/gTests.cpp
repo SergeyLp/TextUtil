@@ -1,18 +1,40 @@
 #include "stdafx.h"
-#include <gtest\gtest.h>
 
-TEST(test_case_name, test_name) {
-    ASSERT_EQ(1, 0) << "1 is not equal 0";
+#include"../TextCore/Main.h"
+
+using std::string;
+using std::cout;
+
+
+TEST(Core, getFile) {
+    ASSERT_EQ(0, 0);// << "getFile wrong";
 }
 
-int main(int argc, char **argv) {
+int _tmain(int argc, _TCHAR* argv[]){
+    std::locale::global(std::locale(""));
+    setlocale(LC_ALL, "Russian");
     ::testing::InitGoogleTest(&argc, argv);
     const int res = RUN_ALL_TESTS();
-    getchar();
-    return res;
-}
+    if (res != 0)
+        return res;
 
-//int _tmain(int argc, _TCHAR* argv[]){
-//	return 0;
-//}
+    if (argc < 2) {
+        std::cerr << "WARNING: Missing arg";
+        return -1;
+    }
+    
+    boost::timer::cpu_timer bench_timer;
+    bench_timer.stop();
+    bench_timer.start( );
+    cout << "\nBuild ...";
+    getFile(argv[1]);
+    //build(input_file_stream);
+    bench_timer.stop( );
+    cout << "\b\b\b\t" << format(bench_timer.elapsed( )) << "";
+
+    view_table();
+
+    getchar();
+    return 0;
+}
 

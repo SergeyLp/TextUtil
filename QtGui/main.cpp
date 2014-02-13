@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "mainwindow.h"
-#include <QtWidgets/QApplication>
 
-int main(int argc, char *argv[])
-{
+#include"../TextCore/Main.h"
+
+
+int main(int argc, char *argv[]){
+    //const int res = getFile(_T(""));
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
