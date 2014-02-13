@@ -4,3 +4,6 @@
 ipch/
 GeneratedFiles/
 *.zip
+Debug/
+*.suo
+*.lnk
