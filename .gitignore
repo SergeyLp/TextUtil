@@ -1,0 +1,6 @@
+*.sdf
+*.opensdf
+*.ipch
+ipch/
+GeneratedFiles/
+*.zip
